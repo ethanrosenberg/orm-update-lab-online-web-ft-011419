@@ -45,7 +45,7 @@ class Student
    end
 
    def self.create(name, grade)
-     student = self.new(name, grade)
+     student = Song.new(name, grade)
      student.save
      student
    end
@@ -59,7 +59,6 @@ class Student
       SELECT *
       FROM students
       WHERE name = ?
-      LIMIT 1
     SQL
 
     DB[:conn].execute(sql, name).map do |row|
